@@ -1,0 +1,150 @@
+/* === Page Layout (Flexbox) === */
+/* Body uses flexbox to push footer to bottom and stack content vertically */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* === Main Content Area === */
+/* Centers the posts and creates side bars on large screens */
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 600px;   /* width of the middle column */
+    margin: 0 auto;     /* centers the posts */
+}
+
+/* === Navigation Bar === */
+/* Full-width top bar with flex layout */
+.navbar {
+    display: flex;
+    gap: 20px;
+    background: #eee;
+    padding: 15px;
+    width: 100%;        /* ensures full-width top bar */
+}
+
+/* Hover effect (pseudo-class requirement) */
+.nav-item:hover {
+    background-color: #cce0ff;
+}
+
+/* === Post Styling === */
+/* Basic post container */
+.post {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    width: 100%;        /* fits inside the centered column */
+}
+
+/* Descendant selector requirement */
+main p {
+    color: #333;
+}
+
+/* Child selector requirement */
+main > h1 {
+    margin-top: 0;
+}
+
+/* Adjacent sibling selector requirement */
+h2 + p {
+    color: #555;
+}
+
+/* General sibling selector requirement */
+h1 ~ article {
+    background: #fafafa;
+}
+
+/* === Responsive Layout === */
+/* Mobile layout adjustments */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    main {
+        max-width: 100%;   /* full width on mobile */
+        padding: 10px;
+    }
+}
+
+/* === Post Header (avatar + date) === */
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Avatar inside posts */
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Post photo styling */
+.post-photo {
+    width: 60%;          /* scale the photo smaller */
+    height: auto;
+    border-radius: 5px;
+    margin: 10px auto;   /* center the photo */
+    display: block;
+}
+
+/* Like icon */
+.like-icon {
+    width: 20px;
+    margin-top: 5px;
+}
+
+/* === Footer === */
+/* Full-width footer bar */
+footer {
+    background: #eee;        /* light grey bar */
+    padding: 15px;           /* spacing */
+    text-align: center;      /* center the text */
+    width: 100%;             /* full width */
+    border-top: 1px solid #ccc; /* subtle top border */
+    margin-top: auto;        /* pushes footer to bottom */
+}
+
+/* === Navigation Buttons === */
+/* Styled nav buttons */
+.nav-item {
+    padding: 10px 20px;
+    background: #e6e6e6;
+    border-radius: 50px;
+    transition: 0.25s ease;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+}
+
+/* Hover animation for nav buttons */
+.nav-item:hover {
+    background: #bcd4ff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+/* === Profile Picture in Navbar === */
+/* Profile icon aligned to the right */
+.nav-profile {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: auto;      /* pushes it to the right */
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin-right: 30px;     /* spacing from scrollbar */
+}
+
+/* Hover animation for profile picture */
+.nav-profile:hover {
+    transform: scale(1.1);
+}
